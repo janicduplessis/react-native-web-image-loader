@@ -1,5 +1,5 @@
-import sizeOf from 'image-size'
+import { imageSize } from 'image-size'
 
 export default function (path: string): { width: number; height: number } {
-  return sizeOf(path)
+  return imageSize(path)
 }
