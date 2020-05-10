@@ -1,12 +1,13 @@
-import path from 'path'
 import fs from 'fs'
-import { promisify } from 'util'
 import loaderUtils from 'loader-utils'
+import path from 'path'
 import validateSchema from 'schema-utils'
+import { promisify } from 'util'
+import { loader } from 'webpack'
 import ImageSizeResolver from './modules/imageSizeResolver'
-import resolveScaledImages from './modules/scaledImageResolver'
 import { createImageWrapper, ScaledSourceImages } from './modules/imageWrapper'
-import schema from './options.json'
+import resolveScaledImages from './modules/scaledImageResolver'
+import schema from './options'
 
 const readFileAsync = promisify(fs.readFile)
 
@@ -14,13 +15,16 @@ const DEFAULT_IMAGE_CLASS_PATH = require.resolve('./modules/adaptiveImage')
 const DEFAULT_IMAGE_NAME_FORMAT = '[hash].[ext]'
 const DEFAULT_SCALINGS = { '@2x': 2, '@3x': 3 }
 
-export default async function (content: Buffer) {
+export default async function resolve(
+  this: loader.LoaderContext,
+  content: Buffer
+) {
   const callback = this.async()
   // if (this.cacheable) this.cacheable() // TODO
 
   const options = loaderUtils.getOptions(this)
 
-  validateSchema(schema as any, options, {
+  validateSchema(schema, options, {
     name: 'React Native Web Image Loader',
     baseDataPath: 'options',
   })
@@ -47,11 +51,11 @@ export default async function (content: Buffer) {
     outputPath = path.posix.join(options.outputPath, url)
   }
 
-  const imgUrls = {
+  const imgUrls: { [key: string]: { url: string; outputPath: string } } = {
     '@1x': { url, outputPath },
   }
 
-  this.emitFile(outputPath, content)
+  this.emitFile(outputPath, content, null)
 
   try {
     const resolvedFiles = await resolveScaledImages(this.resourcePath, scalings)
@@ -69,7 +73,7 @@ export default async function (content: Buffer) {
           outputPath = path.posix.join(options.outputPath, fileName)
         }
 
-        this.emitFile(outputPath, fileContent)
+        this.emitFile(outputPath, fileContent, null)
         imgUrls[`@${scalings[key]}x`] = { url: fileName, outputPath }
       })
     )
@@ -77,7 +81,7 @@ export default async function (content: Buffer) {
     console.error(e)
   }
 
-  const publicImagePaths = {}
+  const publicImagePaths: { [key: string]: string } = {}
 
   for (const key in imgUrls) {
     const { url, outputPath } = imgUrls[key]
@@ -101,7 +105,7 @@ export default async function (content: Buffer) {
 
   const result = wrapImage(size, publicImagePaths as ScaledSourceImages)
 
-  callback(null, result)
+  callback!(null, result)
 }
 
 export const raw = true

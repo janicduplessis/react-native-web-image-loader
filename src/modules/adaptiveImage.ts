@@ -1,8 +1,16 @@
-class AdaptiveImage {
-  protected data
+interface AdaptativeImageData {
+  width: number
+  height: number
+  uri: string
+  'uri@2x'?: string
+  'uri@3x'?: string
+}
 
-  constructor(img) {
-    this.data = img
+class AdaptiveImage {
+  protected data: AdaptativeImageData
+
+  constructor(data: AdaptativeImageData) {
+    this.data = data
   }
 
   get uri() {

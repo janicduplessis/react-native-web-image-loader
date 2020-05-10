@@ -10,7 +10,7 @@ export default async function (
 ) {
   const fileData = path.parse(resource)
   const suffixes = Object.keys(scalings)
-  const result = {}
+  const result: { [key: string]: string } = {}
   for (let i = 0; i < suffixes.length; i++) {
     const suffix = suffixes[i]
     try {

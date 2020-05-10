@@ -1,5 +1,10 @@
 import { imageSize } from 'image-size'
 
-export default function (path: string): { width: number; height: number } {
-  return imageSize(path)
+interface Size {
+  width: number
+  height: number
+}
+
+export default function (path: string): Size {
+  return imageSize(path) as Size
 }

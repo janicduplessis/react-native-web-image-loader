@@ -1,7 +1,5 @@
 export type ScaledSourceImages = {
-  '@1x': string
-  '@2x'?: string
-  '@3x'?: string
+  [key: string]: string
 }
 
 export const createImageWrapper = (classPath: string, esModule = false) => (
@@ -12,7 +10,7 @@ export const createImageWrapper = (classPath: string, esModule = false) => (
 
   delete images['@1x']
 
-  const scalings = []
+  const scalings: string[] = []
 
   for (const scaling in images) {
     scalings.push(`"uri${scaling}": ${images[scaling]},`)
