@@ -392,7 +392,7 @@ Node {
                   "value": Node {
                     "elements": Array [
                       Node {
-                        "end": 482,
+                        "end": 486,
                         "loc": SourceLocation {
                           "end": Position {
                             "column": 5,
@@ -406,7 +406,7 @@ Node {
                         "properties": Array [
                           Node {
                             "computed": false,
-                            "end": 451,
+                            "end": 454,
                             "key": Node {
                               "end": 256,
                               "loc": SourceLocation {
@@ -426,7 +426,7 @@ Node {
                             },
                             "loc": SourceLocation {
                               "end": Position {
-                                "column": 61,
+                                "column": 62,
                                 "line": 11,
                               },
                               "start": Position {
@@ -439,25 +439,25 @@ Node {
                             "start": 250,
                             "type": "ObjectProperty",
                             "value": Node {
-                              "end": 451,
+                              "end": 454,
                               "left": Node {
-                                "end": 443,
+                                "end": 446,
                                 "left": Node {
-                                  "end": 421,
+                                  "end": 423,
                                   "left": Node {
-                                    "end": 387,
+                                    "end": 389,
                                     "left": Node {
-                                      "end": 381,
+                                      "end": 383,
                                       "left": Node {
-                                        "end": 373,
+                                        "end": 375,
                                         "left": Node {
-                                          "end": 351,
+                                          "end": 352,
                                           "left": Node {
-                                            "end": 317,
+                                            "end": 318,
                                             "left": Node {
-                                              "end": 311,
+                                              "end": 312,
                                               "left": Node {
-                                                "end": 303,
+                                                "end": 304,
                                                 "left": Node {
                                                   "end": 281,
                                                   "loc": SourceLocation {
@@ -477,7 +477,7 @@ Node {
                                                 },
                                                 "loc": SourceLocation {
                                                   "end": Position {
-                                                    "column": 59,
+                                                    "column": 60,
                                                     "line": 9,
                                                   },
                                                   "start": Position {
@@ -487,14 +487,14 @@ Node {
                                                 },
                                                 "operator": "+",
                                                 "right": Node {
-                                                  "end": 303,
+                                                  "end": 304,
                                                   "extra": Object {
-                                                    "raw": "\\"static/img@1x.png\\"",
-                                                    "rawValue": "static/img@1x.png",
+                                                    "raw": "\\"static/img@1x.webp\\"",
+                                                    "rawValue": "static/img@1x.webp",
                                                   },
                                                   "loc": SourceLocation {
                                                     "end": Position {
-                                                      "column": 59,
+                                                      "column": 60,
                                                       "line": 9,
                                                     },
                                                     "start": Position {
@@ -504,14 +504,14 @@ Node {
                                                   },
                                                   "start": 284,
                                                   "type": "StringLiteral",
-                                                  "value": "static/img@1x.png",
+                                                  "value": "static/img@1x.webp",
                                                 },
                                                 "start": 258,
                                                 "type": "BinaryExpression",
                                               },
                                               "loc": SourceLocation {
                                                 "end": Position {
-                                                  "column": 67,
+                                                  "column": 68,
                                                   "line": 9,
                                                 },
                                                 "start": Position {
@@ -521,22 +521,22 @@ Node {
                                               },
                                               "operator": "+",
                                               "right": Node {
-                                                "end": 311,
+                                                "end": 312,
                                                 "extra": Object {
                                                   "raw": "\\" 1x\\"",
                                                   "rawValue": " 1x",
                                                 },
                                                 "loc": SourceLocation {
                                                   "end": Position {
-                                                    "column": 67,
+                                                    "column": 68,
                                                     "line": 9,
                                                   },
                                                   "start": Position {
-                                                    "column": 62,
+                                                    "column": 63,
                                                     "line": 9,
                                                   },
                                                 },
-                                                "start": 306,
+                                                "start": 307,
                                                 "type": "StringLiteral",
                                                 "value": " 1x",
                                               },
@@ -545,7 +545,7 @@ Node {
                                             },
                                             "loc": SourceLocation {
                                               "end": Position {
-                                                "column": 73,
+                                                "column": 74,
                                                 "line": 9,
                                               },
                                               "start": Position {
@@ -555,22 +555,22 @@ Node {
                                             },
                                             "operator": "+",
                                             "right": Node {
-                                              "end": 317,
+                                              "end": 318,
                                               "extra": Object {
                                                 "raw": "\\",\\"",
                                                 "rawValue": ",",
                                               },
                                               "loc": SourceLocation {
                                                 "end": Position {
-                                                  "column": 73,
+                                                  "column": 74,
                                                   "line": 9,
                                                 },
                                                 "start": Position {
-                                                  "column": 70,
+                                                  "column": 71,
                                                   "line": 9,
                                                 },
                                               },
-                                              "start": 314,
+                                              "start": 315,
                                               "type": "StringLiteral",
                                               "value": ",",
                                             },
@@ -589,7 +589,7 @@ Node {
                                           },
                                           "operator": "+",
                                           "right": Node {
-                                            "end": 351,
+                                            "end": 352,
                                             "loc": SourceLocation {
                                               "end": Position {
                                                 "column": 31,
@@ -602,7 +602,7 @@ Node {
                                               },
                                             },
                                             "name": "__webpack_public_path__",
-                                            "start": 328,
+                                            "start": 329,
                                             "type": "Identifier",
                                           },
                                           "start": 258,
@@ -610,7 +610,7 @@ Node {
                                         },
                                         "loc": SourceLocation {
                                           "end": Position {
-                                            "column": 53,
+                                            "column": 54,
                                             "line": 10,
                                           },
                                           "start": Position {
@@ -620,14 +620,14 @@ Node {
                                         },
                                         "operator": "+",
                                         "right": Node {
-                                          "end": 373,
+                                          "end": 375,
                                           "extra": Object {
-                                            "raw": "\\"static/img@2x.png\\"",
-                                            "rawValue": "static/img@2x.png",
+                                            "raw": "\\"static/img@2x.webp\\"",
+                                            "rawValue": "static/img@2x.webp",
                                           },
                                           "loc": SourceLocation {
                                             "end": Position {
-                                              "column": 53,
+                                              "column": 54,
                                               "line": 10,
                                             },
                                             "start": Position {
@@ -635,16 +635,16 @@ Node {
                                               "line": 10,
                                             },
                                           },
-                                          "start": 354,
+                                          "start": 355,
                                           "type": "StringLiteral",
-                                          "value": "static/img@2x.png",
+                                          "value": "static/img@2x.webp",
                                         },
                                         "start": 258,
                                         "type": "BinaryExpression",
                                       },
                                       "loc": SourceLocation {
                                         "end": Position {
-                                          "column": 61,
+                                          "column": 62,
                                           "line": 10,
                                         },
                                         "start": Position {
@@ -654,22 +654,22 @@ Node {
                                       },
                                       "operator": "+",
                                       "right": Node {
-                                        "end": 381,
+                                        "end": 383,
                                         "extra": Object {
                                           "raw": "\\" 2x\\"",
                                           "rawValue": " 2x",
                                         },
                                         "loc": SourceLocation {
                                           "end": Position {
-                                            "column": 61,
+                                            "column": 62,
                                             "line": 10,
                                           },
                                           "start": Position {
-                                            "column": 56,
+                                            "column": 57,
                                             "line": 10,
                                           },
                                         },
-                                        "start": 376,
+                                        "start": 378,
                                         "type": "StringLiteral",
                                         "value": " 2x",
                                       },
@@ -678,7 +678,7 @@ Node {
                                     },
                                     "loc": SourceLocation {
                                       "end": Position {
-                                        "column": 67,
+                                        "column": 68,
                                         "line": 10,
                                       },
                                       "start": Position {
@@ -688,22 +688,22 @@ Node {
                                     },
                                     "operator": "+",
                                     "right": Node {
-                                      "end": 387,
+                                      "end": 389,
                                       "extra": Object {
                                         "raw": "\\",\\"",
                                         "rawValue": ",",
                                       },
                                       "loc": SourceLocation {
                                         "end": Position {
-                                          "column": 67,
+                                          "column": 68,
                                           "line": 10,
                                         },
                                         "start": Position {
-                                          "column": 64,
+                                          "column": 65,
                                           "line": 10,
                                         },
                                       },
-                                      "start": 384,
+                                      "start": 386,
                                       "type": "StringLiteral",
                                       "value": ",",
                                     },
@@ -722,7 +722,7 @@ Node {
                                   },
                                   "operator": "+",
                                   "right": Node {
-                                    "end": 421,
+                                    "end": 423,
                                     "loc": SourceLocation {
                                       "end": Position {
                                         "column": 31,
@@ -735,7 +735,7 @@ Node {
                                       },
                                     },
                                     "name": "__webpack_public_path__",
-                                    "start": 398,
+                                    "start": 400,
                                     "type": "Identifier",
                                   },
                                   "start": 258,
@@ -743,7 +743,7 @@ Node {
                                 },
                                 "loc": SourceLocation {
                                   "end": Position {
-                                    "column": 53,
+                                    "column": 54,
                                     "line": 11,
                                   },
                                   "start": Position {
@@ -753,14 +753,14 @@ Node {
                                 },
                                 "operator": "+",
                                 "right": Node {
-                                  "end": 443,
+                                  "end": 446,
                                   "extra": Object {
-                                    "raw": "\\"static/img@3x.png\\"",
-                                    "rawValue": "static/img@3x.png",
+                                    "raw": "\\"static/img@3x.webp\\"",
+                                    "rawValue": "static/img@3x.webp",
                                   },
                                   "loc": SourceLocation {
                                     "end": Position {
-                                      "column": 53,
+                                      "column": 54,
                                       "line": 11,
                                     },
                                     "start": Position {
@@ -768,16 +768,16 @@ Node {
                                       "line": 11,
                                     },
                                   },
-                                  "start": 424,
+                                  "start": 426,
                                   "type": "StringLiteral",
-                                  "value": "static/img@3x.png",
+                                  "value": "static/img@3x.webp",
                                 },
                                 "start": 258,
                                 "type": "BinaryExpression",
                               },
                               "loc": SourceLocation {
                                 "end": Position {
-                                  "column": 61,
+                                  "column": 62,
                                   "line": 11,
                                 },
                                 "start": Position {
@@ -787,22 +787,22 @@ Node {
                               },
                               "operator": "+",
                               "right": Node {
-                                "end": 451,
+                                "end": 454,
                                 "extra": Object {
                                   "raw": "\\" 3x\\"",
                                   "rawValue": " 3x",
                                 },
                                 "loc": SourceLocation {
                                   "end": Position {
-                                    "column": 61,
+                                    "column": 62,
                                     "line": 11,
                                   },
                                   "start": Position {
-                                    "column": 56,
+                                    "column": 57,
                                     "line": 11,
                                   },
                                 },
-                                "start": 446,
+                                "start": 449,
                                 "type": "StringLiteral",
                                 "value": " 3x",
                               },
@@ -812,9 +812,9 @@ Node {
                           },
                           Node {
                             "computed": false,
-                            "end": 476,
+                            "end": 480,
                             "key": Node {
-                              "end": 463,
+                              "end": 466,
                               "loc": SourceLocation {
                                 "end": Position {
                                   "column": 10,
@@ -827,12 +827,12 @@ Node {
                                 },
                               },
                               "name": "type",
-                              "start": 459,
+                              "start": 462,
                               "type": "Identifier",
                             },
                             "loc": SourceLocation {
                               "end": Position {
-                                "column": 23,
+                                "column": 24,
                                 "line": 12,
                               },
                               "start": Position {
@@ -842,17 +842,17 @@ Node {
                             },
                             "method": false,
                             "shorthand": false,
-                            "start": 459,
+                            "start": 462,
                             "type": "ObjectProperty",
                             "value": Node {
-                              "end": 476,
+                              "end": 480,
                               "extra": Object {
-                                "raw": "\\"image/png\\"",
-                                "rawValue": "image/png",
+                                "raw": "\\"image/webp\\"",
+                                "rawValue": "image/webp",
                               },
                               "loc": SourceLocation {
                                 "end": Position {
-                                  "column": 23,
+                                  "column": 24,
                                   "line": 12,
                                 },
                                 "start": Position {
@@ -860,9 +860,9 @@ Node {
                                   "line": 12,
                                 },
                               },
-                              "start": 465,
+                              "start": 468,
                               "type": "StringLiteral",
-                              "value": "image/png",
+                              "value": "image/webp",
                             },
                           },
                         ],
@@ -884,9 +884,9 @@ Node {
                         "properties": Array [
                           Node {
                             "computed": false,
-                            "end": 700,
+                            "end": 701,
                             "key": Node {
-                              "end": 502,
+                              "end": 506,
                               "loc": SourceLocation {
                                 "end": Position {
                                   "column": 12,
@@ -899,12 +899,12 @@ Node {
                                 },
                               },
                               "name": "srcSet",
-                              "start": 496,
+                              "start": 500,
                               "type": "Identifier",
                             },
                             "loc": SourceLocation {
                               "end": Position {
-                                "column": 62,
+                                "column": 61,
                                 "line": 17,
                               },
                               "start": Position {
@@ -914,30 +914,30 @@ Node {
                             },
                             "method": false,
                             "shorthand": false,
-                            "start": 496,
+                            "start": 500,
                             "type": "ObjectProperty",
                             "value": Node {
-                              "end": 700,
+                              "end": 701,
                               "left": Node {
-                                "end": 692,
+                                "end": 693,
                                 "left": Node {
-                                  "end": 669,
+                                  "end": 671,
                                   "left": Node {
-                                    "end": 635,
+                                    "end": 637,
                                     "left": Node {
-                                      "end": 629,
+                                      "end": 631,
                                       "left": Node {
-                                        "end": 621,
+                                        "end": 623,
                                         "left": Node {
-                                          "end": 598,
+                                          "end": 601,
                                           "left": Node {
-                                            "end": 564,
+                                            "end": 567,
                                             "left": Node {
-                                              "end": 558,
+                                              "end": 561,
                                               "left": Node {
-                                                "end": 550,
+                                                "end": 553,
                                                 "left": Node {
-                                                  "end": 527,
+                                                  "end": 531,
                                                   "loc": SourceLocation {
                                                     "end": Position {
                                                       "column": 37,
@@ -950,12 +950,12 @@ Node {
                                                     },
                                                   },
                                                   "name": "__webpack_public_path__",
-                                                  "start": 504,
+                                                  "start": 508,
                                                   "type": "Identifier",
                                                 },
                                                 "loc": SourceLocation {
                                                   "end": Position {
-                                                    "column": 60,
+                                                    "column": 59,
                                                     "line": 15,
                                                   },
                                                   "start": Position {
@@ -965,14 +965,14 @@ Node {
                                                 },
                                                 "operator": "+",
                                                 "right": Node {
-                                                  "end": 550,
+                                                  "end": 553,
                                                   "extra": Object {
-                                                    "raw": "\\"static/img@1x.webp\\"",
-                                                    "rawValue": "static/img@1x.webp",
+                                                    "raw": "\\"static/img@1x.png\\"",
+                                                    "rawValue": "static/img@1x.png",
                                                   },
                                                   "loc": SourceLocation {
                                                     "end": Position {
-                                                      "column": 60,
+                                                      "column": 59,
                                                       "line": 15,
                                                     },
                                                     "start": Position {
@@ -980,16 +980,16 @@ Node {
                                                       "line": 15,
                                                     },
                                                   },
-                                                  "start": 530,
+                                                  "start": 534,
                                                   "type": "StringLiteral",
-                                                  "value": "static/img@1x.webp",
+                                                  "value": "static/img@1x.png",
                                                 },
-                                                "start": 504,
+                                                "start": 508,
                                                 "type": "BinaryExpression",
                                               },
                                               "loc": SourceLocation {
                                                 "end": Position {
-                                                  "column": 68,
+                                                  "column": 67,
                                                   "line": 15,
                                                 },
                                                 "start": Position {
@@ -999,31 +999,31 @@ Node {
                                               },
                                               "operator": "+",
                                               "right": Node {
-                                                "end": 558,
+                                                "end": 561,
                                                 "extra": Object {
                                                   "raw": "\\" 1x\\"",
                                                   "rawValue": " 1x",
                                                 },
                                                 "loc": SourceLocation {
                                                   "end": Position {
-                                                    "column": 68,
+                                                    "column": 67,
                                                     "line": 15,
                                                   },
                                                   "start": Position {
-                                                    "column": 63,
+                                                    "column": 62,
                                                     "line": 15,
                                                   },
                                                 },
-                                                "start": 553,
+                                                "start": 556,
                                                 "type": "StringLiteral",
                                                 "value": " 1x",
                                               },
-                                              "start": 504,
+                                              "start": 508,
                                               "type": "BinaryExpression",
                                             },
                                             "loc": SourceLocation {
                                               "end": Position {
-                                                "column": 74,
+                                                "column": 73,
                                                 "line": 15,
                                               },
                                               "start": Position {
@@ -1033,26 +1033,26 @@ Node {
                                             },
                                             "operator": "+",
                                             "right": Node {
-                                              "end": 564,
+                                              "end": 567,
                                               "extra": Object {
                                                 "raw": "\\",\\"",
                                                 "rawValue": ",",
                                               },
                                               "loc": SourceLocation {
                                                 "end": Position {
-                                                  "column": 74,
+                                                  "column": 73,
                                                   "line": 15,
                                                 },
                                                 "start": Position {
-                                                  "column": 71,
+                                                  "column": 70,
                                                   "line": 15,
                                                 },
                                               },
-                                              "start": 561,
+                                              "start": 564,
                                               "type": "StringLiteral",
                                               "value": ",",
                                             },
-                                            "start": 504,
+                                            "start": 508,
                                             "type": "BinaryExpression",
                                           },
                                           "loc": SourceLocation {
@@ -1067,7 +1067,7 @@ Node {
                                           },
                                           "operator": "+",
                                           "right": Node {
-                                            "end": 598,
+                                            "end": 601,
                                             "loc": SourceLocation {
                                               "end": Position {
                                                 "column": 31,
@@ -1080,15 +1080,15 @@ Node {
                                               },
                                             },
                                             "name": "__webpack_public_path__",
-                                            "start": 575,
+                                            "start": 578,
                                             "type": "Identifier",
                                           },
-                                          "start": 504,
+                                          "start": 508,
                                           "type": "BinaryExpression",
                                         },
                                         "loc": SourceLocation {
                                           "end": Position {
-                                            "column": 54,
+                                            "column": 53,
                                             "line": 16,
                                           },
                                           "start": Position {
@@ -1098,14 +1098,14 @@ Node {
                                         },
                                         "operator": "+",
                                         "right": Node {
-                                          "end": 621,
+                                          "end": 623,
                                           "extra": Object {
-                                            "raw": "\\"static/img@2x.webp\\"",
-                                            "rawValue": "static/img@2x.webp",
+                                            "raw": "\\"static/img@2x.png\\"",
+                                            "rawValue": "static/img@2x.png",
                                           },
                                           "loc": SourceLocation {
                                             "end": Position {
-                                              "column": 54,
+                                              "column": 53,
                                               "line": 16,
                                             },
                                             "start": Position {
@@ -1113,16 +1113,16 @@ Node {
                                               "line": 16,
                                             },
                                           },
-                                          "start": 601,
+                                          "start": 604,
                                           "type": "StringLiteral",
-                                          "value": "static/img@2x.webp",
+                                          "value": "static/img@2x.png",
                                         },
-                                        "start": 504,
+                                        "start": 508,
                                         "type": "BinaryExpression",
                                       },
                                       "loc": SourceLocation {
                                         "end": Position {
-                                          "column": 62,
+                                          "column": 61,
                                           "line": 16,
                                         },
                                         "start": Position {
@@ -1132,31 +1132,31 @@ Node {
                                       },
                                       "operator": "+",
                                       "right": Node {
-                                        "end": 629,
+                                        "end": 631,
                                         "extra": Object {
                                           "raw": "\\" 2x\\"",
                                           "rawValue": " 2x",
                                         },
                                         "loc": SourceLocation {
                                           "end": Position {
-                                            "column": 62,
+                                            "column": 61,
                                             "line": 16,
                                           },
                                           "start": Position {
-                                            "column": 57,
+                                            "column": 56,
                                             "line": 16,
                                           },
                                         },
-                                        "start": 624,
+                                        "start": 626,
                                         "type": "StringLiteral",
                                         "value": " 2x",
                                       },
-                                      "start": 504,
+                                      "start": 508,
                                       "type": "BinaryExpression",
                                     },
                                     "loc": SourceLocation {
                                       "end": Position {
-                                        "column": 68,
+                                        "column": 67,
                                         "line": 16,
                                       },
                                       "start": Position {
@@ -1166,26 +1166,26 @@ Node {
                                     },
                                     "operator": "+",
                                     "right": Node {
-                                      "end": 635,
+                                      "end": 637,
                                       "extra": Object {
                                         "raw": "\\",\\"",
                                         "rawValue": ",",
                                       },
                                       "loc": SourceLocation {
                                         "end": Position {
-                                          "column": 68,
+                                          "column": 67,
                                           "line": 16,
                                         },
                                         "start": Position {
-                                          "column": 65,
+                                          "column": 64,
                                           "line": 16,
                                         },
                                       },
-                                      "start": 632,
+                                      "start": 634,
                                       "type": "StringLiteral",
                                       "value": ",",
                                     },
-                                    "start": 504,
+                                    "start": 508,
                                     "type": "BinaryExpression",
                                   },
                                   "loc": SourceLocation {
@@ -1200,7 +1200,7 @@ Node {
                                   },
                                   "operator": "+",
                                   "right": Node {
-                                    "end": 669,
+                                    "end": 671,
                                     "loc": SourceLocation {
                                       "end": Position {
                                         "column": 31,
@@ -1213,15 +1213,15 @@ Node {
                                       },
                                     },
                                     "name": "__webpack_public_path__",
-                                    "start": 646,
+                                    "start": 648,
                                     "type": "Identifier",
                                   },
-                                  "start": 504,
+                                  "start": 508,
                                   "type": "BinaryExpression",
                                 },
                                 "loc": SourceLocation {
                                   "end": Position {
-                                    "column": 54,
+                                    "column": 53,
                                     "line": 17,
                                   },
                                   "start": Position {
@@ -1231,14 +1231,14 @@ Node {
                                 },
                                 "operator": "+",
                                 "right": Node {
-                                  "end": 692,
+                                  "end": 693,
                                   "extra": Object {
-                                    "raw": "\\"static/img@3x.webp\\"",
-                                    "rawValue": "static/img@3x.webp",
+                                    "raw": "\\"static/img@3x.png\\"",
+                                    "rawValue": "static/img@3x.png",
                                   },
                                   "loc": SourceLocation {
                                     "end": Position {
-                                      "column": 54,
+                                      "column": 53,
                                       "line": 17,
                                     },
                                     "start": Position {
@@ -1246,16 +1246,16 @@ Node {
                                       "line": 17,
                                     },
                                   },
-                                  "start": 672,
+                                  "start": 674,
                                   "type": "StringLiteral",
-                                  "value": "static/img@3x.webp",
+                                  "value": "static/img@3x.png",
                                 },
-                                "start": 504,
+                                "start": 508,
                                 "type": "BinaryExpression",
                               },
                               "loc": SourceLocation {
                                 "end": Position {
-                                  "column": 62,
+                                  "column": 61,
                                   "line": 17,
                                 },
                                 "start": Position {
@@ -1265,26 +1265,26 @@ Node {
                               },
                               "operator": "+",
                               "right": Node {
-                                "end": 700,
+                                "end": 701,
                                 "extra": Object {
                                   "raw": "\\" 3x\\"",
                                   "rawValue": " 3x",
                                 },
                                 "loc": SourceLocation {
                                   "end": Position {
-                                    "column": 62,
+                                    "column": 61,
                                     "line": 17,
                                   },
                                   "start": Position {
-                                    "column": 57,
+                                    "column": 56,
                                     "line": 17,
                                   },
                                 },
-                                "start": 695,
+                                "start": 696,
                                 "type": "StringLiteral",
                                 "value": " 3x",
                               },
-                              "start": 504,
+                              "start": 508,
                               "type": "BinaryExpression",
                             },
                           },
@@ -1292,7 +1292,7 @@ Node {
                             "computed": false,
                             "end": 726,
                             "key": Node {
-                              "end": 712,
+                              "end": 713,
                               "loc": SourceLocation {
                                 "end": Position {
                                   "column": 10,
@@ -1305,12 +1305,12 @@ Node {
                                 },
                               },
                               "name": "type",
-                              "start": 708,
+                              "start": 709,
                               "type": "Identifier",
                             },
                             "loc": SourceLocation {
                               "end": Position {
-                                "column": 24,
+                                "column": 23,
                                 "line": 18,
                               },
                               "start": Position {
@@ -1320,17 +1320,17 @@ Node {
                             },
                             "method": false,
                             "shorthand": false,
-                            "start": 708,
+                            "start": 709,
                             "type": "ObjectProperty",
                             "value": Node {
                               "end": 726,
                               "extra": Object {
-                                "raw": "\\"image/webp\\"",
-                                "rawValue": "image/webp",
+                                "raw": "\\"image/png\\"",
+                                "rawValue": "image/png",
                               },
                               "loc": SourceLocation {
                                 "end": Position {
-                                  "column": 24,
+                                  "column": 23,
                                   "line": 18,
                                 },
                                 "start": Position {
@@ -1338,13 +1338,13 @@ Node {
                                   "line": 18,
                                 },
                               },
-                              "start": 714,
+                              "start": 715,
                               "type": "StringLiteral",
-                              "value": "image/webp",
+                              "value": "image/png",
                             },
                           },
                         ],
-                        "start": 488,
+                        "start": 492,
                         "type": "ObjectExpression",
                       },
                     ],
@@ -1445,16 +1445,16 @@ export default new AdaptiveImage({
   height: 100,
   sources: [
     {
-      srcSet: __webpack_public_path__ + \\"static/img@1x.png\\" + \\" 1x\\" + \\",\\" +
-        __webpack_public_path__ + \\"static/img@2x.png\\" + \\" 2x\\" + \\",\\" +
-        __webpack_public_path__ + \\"static/img@3x.png\\" + \\" 3x\\",
-      type: \\"image/png\\"
-    },
-    {
       srcSet: __webpack_public_path__ + \\"static/img@1x.webp\\" + \\" 1x\\" + \\",\\" +
         __webpack_public_path__ + \\"static/img@2x.webp\\" + \\" 2x\\" + \\",\\" +
         __webpack_public_path__ + \\"static/img@3x.webp\\" + \\" 3x\\",
       type: \\"image/webp\\"
+    },
+    {
+      srcSet: __webpack_public_path__ + \\"static/img@1x.png\\" + \\" 1x\\" + \\",\\" +
+        __webpack_public_path__ + \\"static/img@2x.png\\" + \\" 2x\\" + \\",\\" +
+        __webpack_public_path__ + \\"static/img@3x.png\\" + \\" 3x\\",
+      type: \\"image/png\\"
     }
   ]
 });
