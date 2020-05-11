@@ -115,7 +115,7 @@ export default async function resolve(
 
     // It is possible that we don't have @1x image so normalize using scale.
     const firstFile = resolvedFiles[0]
-    const size = imageSize(firstFile.uri, firstFile.scale)
+    const size = imageSize(firstFile.content, firstFile.scale)
 
     const result = wrapImage(size, images)
     callback(null, result)

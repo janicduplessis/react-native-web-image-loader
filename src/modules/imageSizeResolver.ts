@@ -5,8 +5,8 @@ interface Size {
   height: number
 }
 
-export function imageSize(path: string, scale: number): Size {
-  const size = baseImageSize(path) as Size
+export function imageSize(buffer: Buffer, scale: number): Size {
+  const size = baseImageSize(buffer) as Size
   if (scale !== 1) {
     return { width: size.width / scale, height: size.height / scale }
   } else {
