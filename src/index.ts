@@ -1,28 +1,89 @@
-import fs from 'fs'
 import loaderUtils from 'loader-utils'
 import path from 'path'
 import validateSchema from 'schema-utils'
-import { promisify } from 'util'
 import { loader } from 'webpack'
-import ImageSizeResolver from './modules/imageSizeResolver'
-import { createImageWrapper, ScaledSourceImages } from './modules/imageWrapper'
-import resolveScaledImages from './modules/scaledImageResolver'
+import { resolveImage } from './modules/ImageResolver'
+import { imageSize } from './modules/ImageSizeResolver'
+import { createImageWrapper } from './modules/ImageWrapper'
 import schema from './options'
+import { ResolvedImageSource, WebpackResolvedImage } from './Types'
 
-const readFileAsync = promisify(fs.readFile)
+const DEFAULT_IMAGE_CLASS_PATH = require.resolve('./modules/AdaptiveImage')
+const DEFAULT_IMAGE_NAME_FORMAT = '[hash][scale].[ext]'
+const DEFAULT_SCALINGS = [1, 2, 3]
 
-const DEFAULT_IMAGE_CLASS_PATH = require.resolve('./modules/adaptiveImage')
-const DEFAULT_IMAGE_NAME_FORMAT = '[hash].[ext]'
-const DEFAULT_SCALINGS = { '@2x': 2, '@3x': 3 }
+function interpolateName(
+  context: loader.LoaderContext,
+  nameFormat: string,
+  content: Buffer,
+  scale: number
+): string {
+  return loaderUtils
+    .interpolateName(context, nameFormat, {
+      context: context.context,
+      content,
+    })
+    .replace(/\[scale\]/g, scale === 1 ? '' : `@${scale}x`)
+}
+
+interface Options {
+  scalings?: number[]
+  esModule?: boolean
+  name?: string
+  imageClassPath?: string
+  outputPath?: string
+  publicPath?: string | ((url: string, res: string) => string)
+}
+
+async function emitAndResolveImage(
+  context: loader.LoaderContext,
+  options: Options,
+  file: ResolvedImageSource
+): Promise<WebpackResolvedImage> {
+  const nameFormat = options.name ?? DEFAULT_IMAGE_NAME_FORMAT
+  let fileName = interpolateName(context, nameFormat, file.content, file.scale)
+  if (file.type === 'image/webp') {
+    fileName = fileName.replace(/\.png|\.jpe?g/, '.webp')
+  }
+
+  let outputPath = fileName
+  if (options.outputPath) {
+    outputPath = path.posix.join(options.outputPath, fileName)
+  }
+
+  let publicPath = `__webpack_public_path__ + ${JSON.stringify(outputPath)}`
+  if (options.publicPath) {
+    if (typeof options.publicPath === 'function') {
+      publicPath = options.publicPath(fileName, file.uri)
+    } else {
+      publicPath = `${
+        options.publicPath.endsWith('/')
+          ? options.publicPath
+          : `${options.publicPath}/`
+      }${fileName}`
+    }
+
+    publicPath = JSON.stringify(publicPath)
+  }
+
+  context.emitFile(outputPath, file.content, null)
+
+  return {
+    outputPath,
+    publicPath,
+    type: file.type,
+    scale: file.scale,
+  }
+}
 
 export default async function resolve(
   this: loader.LoaderContext,
   content: Buffer
-) {
-  const callback = this.async()
+): Promise<void> {
+  const callback = this.async()!
   // if (this.cacheable) this.cacheable() // TODO
 
-  const options = loaderUtils.getOptions(this)
+  const options = loaderUtils.getOptions(this) as Options
 
   validateSchema(schema, options, {
     name: 'React Native Web Image Loader',
@@ -31,9 +92,7 @@ export default async function resolve(
 
   const esModule =
     typeof options.esModule !== 'undefined' ? options.esModule : true
-  const nameFormat = options.name || DEFAULT_IMAGE_NAME_FORMAT
-  const scalings = options.scalings || DEFAULT_SCALINGS
-  const size = ImageSizeResolver(this.resourcePath)
+  const scalings = options.scalings ?? DEFAULT_SCALINGS
   const wrapImage = createImageWrapper(
     loaderUtils.stringifyRequest(
       this,
@@ -41,71 +100,28 @@ export default async function resolve(
     ),
     esModule
   )
-  const url = loaderUtils.interpolateName(this, nameFormat, {
-    context: this.context,
-    content,
-  })
-
-  let outputPath = url
-  if (options.outputPath) {
-    outputPath = path.posix.join(options.outputPath, url)
-  }
-
-  const imgUrls: { [key: string]: { url: string; outputPath: string } } = {
-    '@1x': { url, outputPath },
-  }
-
-  this.emitFile(outputPath, content, null)
 
   try {
-    const resolvedFiles = await resolveScaledImages(this.resourcePath, scalings)
-
-    await Promise.all(
-      Object.keys(resolvedFiles).map(async (key) => {
-        const fileContent = await readFileAsync(resolvedFiles[key])
-        const fileName = loaderUtils.interpolateName(this, nameFormat, {
-          context: this.context,
-          content: fileContent,
-        })
-
-        let outputPath = fileName
-        if (options.outputPath) {
-          outputPath = path.posix.join(options.outputPath, fileName)
-        }
-
-        this.emitFile(outputPath, fileContent, null)
-        imgUrls[`@${scalings[key]}x`] = { url: fileName, outputPath }
+    const resolvedFiles = await resolveImage(
+      this.resourcePath,
+      content,
+      scalings
+    )
+    const images = await Promise.all(
+      resolvedFiles.map(async (file) => {
+        return await emitAndResolveImage(this, options, file)
       })
     )
+
+    // It is possible that we don't have @1x image so normalize using scale.
+    const firstFile = resolvedFiles[0]
+    const size = imageSize(firstFile.uri, firstFile.scale)
+
+    const result = wrapImage(size, images)
+    callback(null, result)
   } catch (e) {
-    console.error(e)
+    callback(e)
   }
-
-  const publicImagePaths: { [key: string]: string } = {}
-
-  for (const key in imgUrls) {
-    const { url, outputPath } = imgUrls[key]
-    let publicPath = `__webpack_public_path__ + ${JSON.stringify(outputPath)}`
-    if (options.publicPath) {
-      if (typeof options.publicPath === 'function') {
-        publicPath = options.publicPath(url, this.resourcePath)
-      } else {
-        publicPath = `${
-          options.publicPath.endsWith('/')
-            ? options.publicPath
-            : `${options.publicPath}/`
-        }${url}`
-      }
-
-      publicPath = JSON.stringify(publicPath)
-    }
-
-    publicImagePaths[key] = publicPath
-  }
-
-  const result = wrapImage(size, publicImagePaths as ScaledSourceImages)
-
-  callback!(null, result)
 }
 
 export const raw = true

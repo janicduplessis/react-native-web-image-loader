@@ -1,44 +1,29 @@
-interface AdaptativeImageData {
-  width: number
-  height: number
-  uri: string
-  'uri@2x'?: string
-  'uri@3x'?: string
-}
+import { AdaptativeImageData, AdaptativeImageSource } from '../Types'
 
-class AdaptiveImage {
+export class AdaptiveImage {
   protected data: AdaptativeImageData
 
   constructor(data: AdaptativeImageData) {
     this.data = data
   }
 
-  get uri() {
-    if (
-      typeof window !== 'undefined' &&
-      typeof window.devicePixelRatio !== 'undefined'
-    ) {
-      if (window.devicePixelRatio > 2 && this.data['uri@3x']) {
-        return this.data['uri@3x']
-      } else if (window.devicePixelRatio > 1 && this.data['uri@2x']) {
-        return this.data['uri@2x']
-      }
-    }
-
+  get uri(): string {
     return this.data.uri
   }
 
-  get width() {
+  get width(): number {
     return this.data.width
   }
 
-  get height() {
+  get height(): number {
     return this.data.height
   }
 
-  toString() {
+  get sources(): AdaptativeImageSource[] | undefined {
+    return this.data.sources
+  }
+
+  toString(): string {
     return this.uri
   }
 }
-
-export default AdaptiveImage

@@ -1,10 +1,15 @@
-import { imageSize } from 'image-size'
+import { imageSize as baseImageSize } from 'image-size'
 
 interface Size {
   width: number
   height: number
 }
 
-export default function (path: string): Size {
-  return imageSize(path) as Size
+export function imageSize(path: string, scale: number): Size {
+  const size = baseImageSize(path) as Size
+  if (scale !== 1) {
+    return { width: size.width / scale, height: size.height / scale }
+  } else {
+    return size
+  }
 }
